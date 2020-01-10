@@ -102,7 +102,19 @@ namespace NWS_Alerts
                                 EasyLogger.Info("Last Update Time: " + LastUpdate);
                             }
 
-                            if (CountyInfoFound)
+                            bool AlertIgnored = false;
+                            if (Default.IgnoreAlerts.Count > 0)
+                            {
+                                foreach (var alert in Default.IgnoreAlerts)
+                                {
+                                    if (item.Title.Text.Contains(alert))
+                                    {
+                                        AlertIgnored = true;
+                                    }
+                                }
+                            }
+
+                            if (CountyInfoFound && !AlertIgnored)
                             {
                                 if (ShowToast && !MuteAlerts)
                                 {
