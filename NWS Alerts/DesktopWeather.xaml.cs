@@ -388,7 +388,7 @@ namespace NWS_Alerts
                     };
                     thread.Start();
                 }
-                if (UpdateTimer.ReturnDateTime(DateTime.Now.AddMinutes(-15), AlertTime))
+                if (UpdateTimer.ReturnDateTime(DateTime.Now.AddMinutes(-10), AlertTime))
                 {
                     AlertTime = DateTime.Now.AddSeconds(-DateTime.Now.Second);
 

@@ -114,9 +114,9 @@ namespace NWS_Alerts
                                 }
                             }
 
-                            if (CountyInfoFound && !AlertIgnored)
+                            if (CountyInfoFound)
                             {
-                                if (ShowToast && !MuteAlerts)
+                                if (ShowToast && !MuteAlerts && !AlertIgnored)
                                 {
                                     EasyLogger.Info("All conditions have been met and an alert is present. Showing a Toast Notification Alert... ");
 
