@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"><?define NWS Alerts_TargetDir=$(var.NWS Alerts.TargetDir)?><?define DesktopToast_TargetDir=$(var.DesktopToast.TargetDir)?>
+	<Product Id="*" Name="NWS Alerts" Language="1033" Version="2.2.0.0" Manufacturer="xCONFLiCTiONx" UpgradeCode="fb99dfdd-c3e7-4f83-ae7c-00081d1947b6">
+		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+
+    <Property Id="WIXUI_INSTALLDIR" Value="INSTALLFOLDER" ></Property>
+    <WixVariable Id="WixUILicenseRtf" Value="$(var.TargetDir)..\License.rtf" />
+    
+		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+    <Media Id="1" Cabinet="bin.cab" EmbedCab="yes" />
+
+		<Feature Id="ProductFeature" Title="NWS Alerts" Level="1">
+			<ComponentGroupRef Id="ProductComponents" />
+		</Feature>
+    <Property Id="PREVIOUSVERSIONSINSTALLED" Secure="yes" />
+    <Upgrade Id="9EA2B08E-9569-4EE4-BDB4-6D7720600C19" />
+	</Product>
+
+	<Fragment>
+		<Directory Id="TARGETDIR" Name="SourceDir">
+      <!-- ProgramFilesFolder (x86)-->
+			<Directory Id="ProgramFiles64Folder">
+				<Directory Id="INSTALLFOLDER" Name="NWS Alerts" />
+			</Directory>
+		</Directory>
+
+    <Feature Id="MainApplication" Title="Main Application" Level="1">
+      <ComponentRef Id="NWS_Alerts.exe" />
+    </Feature>
+
+    <UI>
+      <UIRef Id="WixUI_InstallDir" />
+      <Publish Dialog="ExitDialog" Control="Finish" Event="DoAction" Value="LaunchApplication">WIXUI_EXITDIALOGOPTIONALCHECKBOX = 1 and NOT Installed</Publish>
+    </UI>
+    <Property Id="WIXUI_EXITDIALOGOPTIONALCHECKBOXTEXT" Value="Launch NWS Alerts" />
+
+    <Property Id="WixShellExecTarget" Value="[#NWS_Alerts.exe]" />
+
+    <CustomAction Id="LaunchApplication" BinaryKey="WixCA" DllEntry="WixShellExec" Impersonate="yes" />
+    
+    <Icon Id="icon.ico" SourceFile="$(var.TargetDir)..\NWS Alerts\Resources\DayNotify.ico" />
+    <Property Id="ARPPRODUCTICON" Value="icon.ico" />
+	</Fragment>
+
+	<Fragment>
+		<ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+			<Component Id="NWS_Alerts.exe" Guid="e7024831-71d1-43d3-9c0f-797a4c1faa50">
+			  <File Id="NWS_Alerts.exe" Name="NWS Alerts.exe" Source="$(var.NWS Alerts_TargetDir)NWS Alerts.exe" />
+			</Component>
+			<Component Id="NWS_Alerts.exe.config" Guid="7cee83e3-eeae-436b-b397-6b8f3af3dbf3">
+			  <File Id="NWS_Alerts.exe.config" Name="NWS Alerts.exe.config" Source="$(var.NWS Alerts_TargetDir)NWS Alerts.exe.config" />
+			</Component>
+			<Component Id="DesktopToast.dll" Guid="48837c39-dcb4-43b4-ad2b-1ac87fb397fa">
+			  <File Id="DesktopToast.dll" Name="DesktopToast.dll" Source="$(var.DesktopToast_TargetDir)DesktopToast.dll" />
+			</Component>
+			<Component Id="NotificationsExtensions.Win10.dll" Guid="43ef4e2a-c2c6-4895-9f9b-c47e44e3e3d0">
+			  <File Id="NotificationsExtensions.Win10.dll" Name="NotificationsExtensions.Win10.dll" Source="$(var.NWS Alerts_TargetDir)NotificationsExtensions.Win10.dll" />
+			</Component>
+			<Component Id="EasyLogger.dll" Guid="2c4fa0dd-29cd-4ccf-9b76-173a86dc5eab">
+			  <File Id="EasyLogger.dll" Name="EasyLogger.dll" Source="$(var.NWS Alerts_TargetDir)EasyLogger.dll" />
+			</Component>
+      <Component Id="WindowPlacementHelper.dll" Guid="a1fc9da2-872d-49c7-a1dc-80052085298b">
+        <File Id="WindowPlacementHelper.dll" Name="WindowPlacementHelper.dll" Source="$(var.NWS Alerts_TargetDir)WindowPlacementHelper.dll" />
+      </Component>
+      <Component Id="DesktopToast.png" Guid="46C3A967-49A1-4B15-A2F3-F4DAAEE07B6E">
+        <File Id="DesktopToast.png" Name="DesktopToast.png" Source="$(var.NWS Alerts_TargetDir)DesktopToast.png" />
+      </Component>
+		</ComponentGroup>
+	</Fragment>
+</Wix>

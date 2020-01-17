@@ -41,6 +41,16 @@ namespace NWS_Alerts
             Close();
         }
 
+        private void CancelButton_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
+        private void OKButton_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
         #endregion Main
 
 

@@ -29,7 +29,7 @@ namespace NWS_Alerts
         public static bool ConnectedToInternet = true;
         static DateTime AlertTime = DateTime.Now.AddSeconds(-DateTime.Now.Second);
         public static DispatcherTimer timer;
-        static readonly string LocalDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+        static readonly string NWSAlertsDirectory = Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData) + "\\NWS Alerts";
 
         // Desktop Weather References
         static XmlDocument xmlDoc;
@@ -52,6 +52,11 @@ namespace NWS_Alerts
         public DesktopWeather()
         {
             InitializeComponent();
+
+            if (!Directory.Exists(NWSAlertsDirectory))
+            {
+                Directory.CreateDirectory(NWSAlertsDirectory);
+            }
 
             RegistryKey key = Registry.LocalMachine.OpenSubKey(@"SOFTWARE\Classes\Local Settings\Software\Microsoft\Windows\CurrentVersion\AppModel\PackageRepository\Extensions\ProgIDs\AppXgtz62cfp9761w8h33sbaykyt1vkbm4vj");
 
@@ -163,11 +168,11 @@ namespace NWS_Alerts
                     EasyLogger.Info("It appears that you do not have an internet connection. We will retry later. The actual error message is: " + Environment.NewLine + Environment.NewLine + "     " + ex.Message + Environment.NewLine);
                 }
 
-                if (File.Exists(LocalDirectory + "\\WeatherInfo.xml"))
+                if (File.Exists(NWSAlertsDirectory + "\\WeatherInfo.xml"))
                 {
                     EasyLogger.Info("New weather information downloaded and saved successfully");
 
-                    fileInfo = new FileInfo(LocalDirectory + "\\WeatherInfo.xml");
+                    fileInfo = new FileInfo(NWSAlertsDirectory + "\\WeatherInfo.xml");
 
                     FileTime = fileInfo.LastWriteTime;
                 }
@@ -191,7 +196,7 @@ namespace NWS_Alerts
         {
             EasyLogger.Info("Updating Desktop Weather info using WeatherInfo.xml");
 
-            using (FileStream fileStream = new FileStream(LocalDirectory + "\\WeatherInfo.xml",
+            using (FileStream fileStream = new FileStream(NWSAlertsDirectory + "\\WeatherInfo.xml",
                                       FileMode.Open,
                                       FileAccess.Read,
                                       FileShare.ReadWrite))
@@ -382,7 +387,7 @@ namespace NWS_Alerts
 
                     EasyLogger.Info("Downloading new weather info using values: " + Default.LatValue + "," + Default.LongValue);
 
-                    Thread thread = new Thread(() => DesktopWeatherXML(PreWeatherString + Default.LatValue + "," + Default.LongValue, LocalDirectory + "\\WeatherInfo.xml"))
+                    Thread thread = new Thread(() => DesktopWeatherXML(PreWeatherString + Default.LatValue + "," + Default.LongValue, NWSAlertsDirectory + "\\WeatherInfo.xml"))
                     {
                         IsBackground = true
                     };
@@ -474,9 +479,9 @@ namespace NWS_Alerts
                 thread.Start();
             }
 
-            if (File.Exists(LocalDirectory + "\\WeatherInfo.xml"))
+            if (File.Exists(NWSAlertsDirectory + "\\WeatherInfo.xml"))
             {
-                fileInfo = new FileInfo(LocalDirectory + "\\WeatherInfo.xml");
+                fileInfo = new FileInfo(NWSAlertsDirectory + "\\WeatherInfo.xml");
 
                 FileTime = fileInfo.LastWriteTime;
 
@@ -566,7 +571,7 @@ namespace NWS_Alerts
 
                 Updating = true;
 
-                Thread thread = new Thread(() => DesktopWeatherXML(PreWeatherString + Default.LatValue + "," + Default.LongValue, LocalDirectory + "\\WeatherInfo.xml"))
+                Thread thread = new Thread(() => DesktopWeatherXML(PreWeatherString + Default.LatValue + "," + Default.LongValue, NWSAlertsDirectory + "\\WeatherInfo.xml"))
                 {
                     IsBackground = true
                 };

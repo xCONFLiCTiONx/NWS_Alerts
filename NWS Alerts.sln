@@ -10,20 +10,44 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NWS Alerts", "NWS Alerts\NW
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesktopToast", "DesktopToast\DesktopToast.csproj", "{B8D704D5-FB0C-4C2D-8189-72C6649BA157}"
 EndProject
+Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "NWS Alerts Setup", "NWS Alerts Setup\NWS Alerts Setup.wixproj", "{8F84B1EE-6AFC-49FA-8B9C-51A710462C0C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A53F850E-6A86-4DBC-88E8-4006DF3CF820}"
+	ProjectSection(SolutionItems) = preProject
+		AssemblyVersionInfo.cs = AssemblyVersionInfo.cs
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
-		Release|Any CPU = Release|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{CB7BA755-6053-4716-9284-273D66978262}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CB7BA755-6053-4716-9284-273D66978262}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CB7BA755-6053-4716-9284-273D66978262}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CB7BA755-6053-4716-9284-273D66978262}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B8D704D5-FB0C-4C2D-8189-72C6649BA157}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B8D704D5-FB0C-4C2D-8189-72C6649BA157}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B8D704D5-FB0C-4C2D-8189-72C6649BA157}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B8D704D5-FB0C-4C2D-8189-72C6649BA157}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CB7BA755-6053-4716-9284-273D66978262}.Debug|x64.ActiveCfg = Debug|x64
+		{CB7BA755-6053-4716-9284-273D66978262}.Debug|x64.Build.0 = Debug|x64
+		{CB7BA755-6053-4716-9284-273D66978262}.Debug|x86.ActiveCfg = Debug|x86
+		{CB7BA755-6053-4716-9284-273D66978262}.Debug|x86.Build.0 = Debug|x86
+		{CB7BA755-6053-4716-9284-273D66978262}.Release|x64.ActiveCfg = Release|x64
+		{CB7BA755-6053-4716-9284-273D66978262}.Release|x64.Build.0 = Release|x64
+		{CB7BA755-6053-4716-9284-273D66978262}.Release|x86.ActiveCfg = Release|x86
+		{CB7BA755-6053-4716-9284-273D66978262}.Release|x86.Build.0 = Release|x86
+		{B8D704D5-FB0C-4C2D-8189-72C6649BA157}.Debug|x64.ActiveCfg = Debug|x64
+		{B8D704D5-FB0C-4C2D-8189-72C6649BA157}.Debug|x64.Build.0 = Debug|x64
+		{B8D704D5-FB0C-4C2D-8189-72C6649BA157}.Debug|x86.ActiveCfg = Debug|x86
+		{B8D704D5-FB0C-4C2D-8189-72C6649BA157}.Debug|x86.Build.0 = Debug|x86
+		{B8D704D5-FB0C-4C2D-8189-72C6649BA157}.Release|x64.ActiveCfg = Release|x64
+		{B8D704D5-FB0C-4C2D-8189-72C6649BA157}.Release|x64.Build.0 = Release|x64
+		{B8D704D5-FB0C-4C2D-8189-72C6649BA157}.Release|x86.ActiveCfg = Release|x86
+		{B8D704D5-FB0C-4C2D-8189-72C6649BA157}.Release|x86.Build.0 = Release|x86
+		{8F84B1EE-6AFC-49FA-8B9C-51A710462C0C}.Debug|x64.ActiveCfg = Debug|x64
+		{8F84B1EE-6AFC-49FA-8B9C-51A710462C0C}.Debug|x86.ActiveCfg = Debug|x86
+		{8F84B1EE-6AFC-49FA-8B9C-51A710462C0C}.Debug|x86.Build.0 = Debug|x86
+		{8F84B1EE-6AFC-49FA-8B9C-51A710462C0C}.Release|x64.ActiveCfg = Release|x64
+		{8F84B1EE-6AFC-49FA-8B9C-51A710462C0C}.Release|x64.Build.0 = Release|x64
+		{8F84B1EE-6AFC-49FA-8B9C-51A710462C0C}.Release|x86.ActiveCfg = Release|x86
+		{8F84B1EE-6AFC-49FA-8B9C-51A710462C0C}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

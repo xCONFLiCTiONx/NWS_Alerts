@@ -30,7 +30,6 @@ namespace NWS_Alerts
         private const string MessageId = "Message";
         public string MessageTitle = "National Weather Service";
         public string MessageBody { get; set; }
-        private const string MessageThumbImage = "ToastImage.png";
 
         #endregion References
 
@@ -38,8 +37,6 @@ namespace NWS_Alerts
 
         public MainWindow()
         {
-            Directory.SetCurrentDirectory(AppDomain.CurrentDomain.BaseDirectory);
-
             InitializeComponent();
 
             EasyLogger.BackupLogs(EasyLogger.LogFile);
@@ -224,6 +221,7 @@ namespace NWS_Alerts
                 ToastXml = ComposeInteractiveToast(),
                 ShortcutFileName = "NWS Alerts.lnk",
                 ShortcutTargetFilePath = Assembly.GetExecutingAssembly().Location,
+                ShortcutWorkingFolder = AppDomain.CurrentDomain.BaseDirectory,
                 AppId = "NWS Alerts",
                 ActivatorId = typeof(NotificationActivator).GUID
             };
@@ -246,7 +244,7 @@ namespace NWS_Alerts
                     },
                     AppLogoOverride = new ToastGenericAppLogo
                     {
-                        Source = string.Format("file:///{0}", Path.GetFullPath(MessageThumbImage)),
+                        Source = string.Format("file:///{0}", Path.GetFullPath("DesktopToast.png")),
                         AlternateText = ""
                     }
                 }

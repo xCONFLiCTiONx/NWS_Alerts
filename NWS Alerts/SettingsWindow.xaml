@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" x:Name="window" AllowsTransparency="True" BorderBrush="Black" BorderThickness="1" MouseDown="Window_MouseDown"
-        Title="MainWindow" Height="260" Width="590" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" ShowInTaskbar="False" WindowStyle="None" Background="#FF1D1D1D">
+        Title="MainWindow" Height="280" Width="590" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" ShowInTaskbar="False" WindowStyle="None" Background="#FF1D1D1D" Topmost="True">
     <Grid>
         <StackPanel>
             <DockPanel x:Name="TitleBar" Background="Black" Opacity="0.6" Height="30">
@@ -16,7 +16,7 @@
             </DockPanel>
             <StackPanel Margin="10" Background="#FF0E0E0E">
                 <Border BorderBrush="Black" BorderThickness="1">
-                    <StackPanel Margin="10,12,10,22">
+                    <StackPanel Margin="10,12,10,10">
                         
                         <Label Content="Only show alerts for:" Foreground="White" FontSize="16"/>
                         <DockPanel Margin="0,10,0,0">
@@ -38,10 +38,9 @@
                                 <Button x:Name="ListAddIgnoreAlerts" Width="65" HorizontalAlignment="Left" Content="Add" Style="{StaticResource ButtonHoverGray}" Click="ListAddIgnoreAlerts_Click"/>
                             </DockPanel>
                         </DockPanel>
-                        <DockPanel Margin="0,10,0,0">
-                            <DockPanel/>
-                        </DockPanel>
-                        <DockPanel Margin="0,10,0,0">
+                        <DockPanel HorizontalAlignment="Right" Margin="0,20,0,0">
+                            <Button x:Name="CancelButton" Height="30" Width="90" Content="Cancel" Style="{StaticResource ButtonHoverGray}" Click="CancelButton_Click"/>
+                            <Button x:Name="OKButton" Height="30" Width="90" Margin="10 0 0 0" Content="OK" Style="{StaticResource ButtonHoverGray}" Click="OKButton_Click"/>
                             <DockPanel/>
                         </DockPanel>
                     </StackPanel>
