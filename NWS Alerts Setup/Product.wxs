@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"><?define NWS Alerts_TargetDir=$(var.NWS Alerts.TargetDir)?><?define DesktopToast_TargetDir=$(var.DesktopToast.TargetDir)?>
-	<Product Id="*" Name="NWS Alerts" Language="1033" Version="2.2.0.0" Manufacturer="xCONFLiCTiONx" UpgradeCode="fb99dfdd-c3e7-4f83-ae7c-00081d1947b6">
+	<Product Id="*" Name="NWS Alerts" Language="1033" Version="2.3.0.0" Manufacturer="xCONFLiCTiONx" UpgradeCode="fb99dfdd-c3e7-4f83-ae7c-00081d1947b6">
 		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
 
     <Property Id="WIXUI_INSTALLDIR" Value="INSTALLFOLDER" ></Property>
@@ -11,6 +11,7 @@
 
 		<Feature Id="ProductFeature" Title="NWS Alerts" Level="1">
 			<ComponentGroupRef Id="ProductComponents" />
+			<ComponentRef Id="ApplicationShortcutStartup" />
 		</Feature>
     <Property Id="PREVIOUSVERSIONSINSTALLED" Secure="yes" />
     <Upgrade Id="9EA2B08E-9569-4EE4-BDB4-6D7720600C19" />
@@ -22,12 +23,20 @@
 			<Directory Id="ProgramFiles64Folder">
 				<Directory Id="INSTALLFOLDER" Name="NWS Alerts" />
 			</Directory>
+			<Directory Id="StartupFolder" Name="Startup"></Directory>
 		</Directory>
 
     <Feature Id="MainApplication" Title="Main Application" Level="1">
       <ComponentRef Id="NWS_Alerts.exe" />
     </Feature>
-
+		<DirectoryRef Id="StartupFolder">
+			<Component Id="ApplicationShortcutStartup" Guid="D51EADA7-D31B-42A9-8F76-B85E884B115A">
+				<Shortcut Id="ApplicationStartupShortcut" Name="NWS Alerts" Description="National Weather Service Alerts" Target="[INSTALLFOLDER]NWS Alerts.exe" WorkingDirectory="INSTALLFOLDER" />
+				<RemoveFolder Id="RemoveStartupFolder" Directory="StartupFolder" On="uninstall" />
+      <RegistryValue Root="HKCU" Key="Software\NWS Alerts" Name="installed" Type="integer" Value="1" KeyPath="yes" />
+			</Component>
+		</DirectoryRef>
+      
     <UI>
       <UIRef Id="WixUI_InstallDir" />
       <Publish Dialog="ExitDialog" Control="Finish" Event="DoAction" Value="LaunchApplication">WIXUI_EXITDIALOGOPTIONALCHECKBOX = 1 and NOT Installed</Publish>
