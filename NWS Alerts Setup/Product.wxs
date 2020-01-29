@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"><?define NWS Alerts_TargetDir=$(var.NWS Alerts.TargetDir)?><?define DesktopToast_TargetDir=$(var.DesktopToast.TargetDir)?>
-	<Product Id="*" Name="NWS Alerts" Language="1033" Version="2.3.0.0" Manufacturer="xCONFLiCTiONx" UpgradeCode="fb99dfdd-c3e7-4f83-ae7c-00081d1947b6">
+	<Product Id="*" Name="NWS Alerts" Language="1033" Version="2.4.0.0" Manufacturer="xCONFLiCTiONx" UpgradeCode="fb99dfdd-c3e7-4f83-ae7c-00081d1947b6">
 		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
 
     <Property Id="WIXUI_INSTALLDIR" Value="INSTALLFOLDER" ></Property>
@@ -19,7 +19,6 @@
 
 	<Fragment>
 		<Directory Id="TARGETDIR" Name="SourceDir">
-      <!-- ProgramFilesFolder (x86)-->
 			<Directory Id="ProgramFiles64Folder">
 				<Directory Id="INSTALLFOLDER" Name="NWS Alerts" />
 			</Directory>
@@ -42,6 +41,7 @@
       <Publish Dialog="ExitDialog" Control="Finish" Event="DoAction" Value="LaunchApplication">WIXUI_EXITDIALOGOPTIONALCHECKBOX = 1 and NOT Installed</Publish>
     </UI>
     <Property Id="WIXUI_EXITDIALOGOPTIONALCHECKBOXTEXT" Value="Launch NWS Alerts" />
+    <Property Id="WIXUI_EXITDIALOGOPTIONALCHECKBOX" Value="1" />
 
     <Property Id="WixShellExecTarget" Value="[#NWS_Alerts.exe]" />
 
