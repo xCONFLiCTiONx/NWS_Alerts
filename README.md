@@ -7,7 +7,7 @@ A Widget like WPF Desktop Application with Windows 10 Toast Notifications alerti
 Alerts are fetched every 10 minutes from [https://alerts.weather.gov](https://alerts.weather.gov).
 The Desktop Weather App parses weather updates once every 30 minutes.
   
-NWS Alerts Iterates through counties affected and matches to your setting of which counties to show alerts for. The most recent alert containing one of the counties you list will be the info used. If you have no counties, you will recieve the lastest update for all counties in the state you select.
+NWS Alerts Iterates through counties affected and matches to your setting of which counties to show alerts for. The most recent alert containing one of the counties you list will be the info used. If you have no counties, you will receive the latest update for all counties in the state you select.
 
 ![Screenshot1](https://github.com/xCONFLiCTiONx/NWS_Alerts/raw/master/Screenshot.jpg)  
 
