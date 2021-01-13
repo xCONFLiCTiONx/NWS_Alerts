@@ -41,7 +41,3 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 NOAA National Environmental Satellite, Data, and Information Service (NESDIS)  
 Referral:  
 NOAA Environmental Visualization Laboratory 
-
-## Donations
-
-[Donate on Patreon](https://www.patreon.com/xCONFLiCTiONx)
