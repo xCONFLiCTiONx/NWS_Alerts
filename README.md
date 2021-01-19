@@ -15,6 +15,7 @@ NWS Alerts Iterates through counties affected and matches to your setting of whi
 
 The Microsoft BingWeather App must be installed for this application to work.  
 To get your coordinates for the Desktop Weather App:  
+
 * [Google Maps](https://support.google.com/maps/answer/18539?co=GENIE.Platform%3DDesktop&hl=en)
 
 ## Disclaimer
@@ -39,9 +40,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 ## Acknowledgments
 
 NOAA National Environmental Satellite, Data, and Information Service (NESDIS)  
-Referral:  
-NOAA Environmental Visualization Laboratory 
-
-## Donations
-
-[Donate on Patreon](https://www.patreon.com/xCONFLiCTiONx)
+Referral:  NOAA Environmental Visualization Laboratory
