@@ -4,6 +4,14 @@ National Weather Service Alerts For Windows Desktop
 
 A Widget like WPF Desktop Application with Windows 10 Toast Notifications alerting of dangerous weather.
 
+## Download
+
+[https://github.com/xCONFLiCTiONx/XtendedMenu/releases](https://github.com/xCONFLiCTiONx/NWS_Alerts/releases)  
+
+![GitHub all releases](https://img.shields.io/github/downloads/xCONFLiCTiONx/NWS_Alerts/total)  [![GitHub stars](https://img.shields.io/github/stars/xCONFLiCTiONx/XtendedMenu)](https://github.com/xCONFLiCTiONx/NWS_Alerts/stargazers)
+
+### More info:
+
 Alerts are fetched every 10 minutes from [https://alerts.weather.gov](https://alerts.weather.gov).
 The Desktop Weather App parses weather updates once every 30 minutes.
   
