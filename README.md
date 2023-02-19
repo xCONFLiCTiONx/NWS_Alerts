@@ -2,7 +2,9 @@
 
 National Weather Service Alerts For Windows Desktop
 
-A Widget like WPF Desktop Application with Windows 10 Toast Notifications alerting of dangerous weather.
+A Widget like WPF Desktop Application with Windows 10 Toast Notifications alerting of dangerous weather.  
+
+Works on Windows 10/11  
 
 ## Download
 
@@ -25,6 +27,9 @@ The Microsoft BingWeather App must be installed for this application to work.
 To get your coordinates for the Desktop Weather App:  
 
 * [Google Maps](https://support.google.com/maps/answer/18539?co=GENIE.Platform%3DDesktop&hl=en)
+
+## Known Issues:
+The widget is slow to load. Just be patient. I have to right click on the system tray icon to get it to respond. This could be fixed but I don't have the time. If anyone wnats to fix it and send a pull request, go for it!
 
 ## Disclaimer
 
