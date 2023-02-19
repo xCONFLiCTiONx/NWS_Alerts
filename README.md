@@ -8,8 +8,6 @@ A Widget like WPF Desktop Application with Windows 10 Toast Notifications alerti
 
 [https://github.com/xCONFLiCTiONx/NWS_Alerts/releases](https://github.com/xCONFLiCTiONx/NWS_Alerts/releases)  
 
-[![GitHub all releases](https://img.shields.io/github/downloads/xCONFLiCTiONx/NWS_Alerts/total)  [![GitHub stars]](https://github.com/xCONFLiCTiONx/NWS_Alerts/releases)  
-
 ![GitHub all releases](https://img.shields.io/github/downloads/xCONFLiCTiONx/NWS_Alerts/total)  [![GitHub stars](https://img.shields.io/github/stars/xCONFLiCTiONx/XtendedMenu)](https://github.com/xCONFLiCTiONx/NWS_Alerts/stargazers)
 
 ### More info:
